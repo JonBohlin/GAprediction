@@ -1,4 +1,4 @@
-# Extract CpGs needed for prediction of GA (predictGA package)
+# Extract CpGs needed for prediction of GA (GAprediction package)
 # type="se" (default) designates model with penalty term
 # lambda within less one standard error of minimum
 # (se="min", gives CpGs for minimum lambda model, se="all" gives all CpGs
@@ -11,7 +11,7 @@ extractSites<-function( type="se" ){
   all<-FALSE
   if (type=="se"){
     # lambda's within one std. error of minimum retains fewer components
-    # and model performance is comparable to minimum lambda, therfore it is default
+    # and model performance is comparable to minimum lambda, therefore it is default
     tempMat<-as.matrix(coef(UL.mod.cv, s="lambda.1se"))
   }
   # Minimum lambdas, slightly better performance, but more CpGs retained
